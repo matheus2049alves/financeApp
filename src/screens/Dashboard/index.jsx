@@ -1,10 +1,17 @@
 import React from 'react';
-import { Container, Title } from './styles';
+import { Container, Title,Header,LeftIconContainer } from './styles';
+import {HeaderButton} from '../../components/HeaderButton';
+
 
 export const Dashboard = () => {
   return (
     <Container>
-      <Title>Dashboard</Title>
+      <Header>
+        <LeftIconContainer>
+          <HeaderButton/>
+        </LeftIconContainer>
+        <Title>Dashboard</Title>
+      </Header>
     </Container>
   );
 };

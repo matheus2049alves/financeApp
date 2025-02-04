@@ -11,6 +11,23 @@ export const Container = styled.View`
 export const Title = styled.Text`
   font-size: 24px;
   font-weight: bold;
-  margin-top: 20px;
   color: ${({ theme }) => theme.COLORS.TITLE};
+  text-align: center;
 `;
+
+export const Header = styled.View`
+  position: relative;
+  width: 100%;
+  height: 70px;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+`;
+
+export const LeftIconContainer = styled.View`
+  position: absolute;
+  left: 20px;
+  top: 25px;
+  
+`;
+
