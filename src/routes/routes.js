@@ -6,6 +6,8 @@ import Wallet from '../../assets/Wallet.svg';
 import User from '../../assets/User.svg';
 import Home from '../../assets/Home.svg';
 
+import { ButtonAdd } from '../components/ButtonAdd';
+
 const Tab = createBottomTabNavigator();
 
 export default function Routes() {
@@ -14,13 +16,14 @@ export default function Routes() {
       screenOptions={{
         tabBarShowLabel: false,
         borderTopColor: 'transparent',
-        tabBarActiveTintColor : 'fff',
+        tabBarActiveTintColor : '#fff',
         tabBarInactiveTintColor: '#fff',
         tabBarStyle: {
           borderTopWidth: 0,
           elevation: 0,
           height: 60,
-          paddingTop: 10,  
+          paddingTop: 10, 
+          borderTopLeftRadius: 20 
         },
       }}
     >
@@ -41,6 +44,16 @@ export default function Routes() {
           headerShown: false,
           tabBarIcon: ({ color, size }) => (
             <Calendar width={size} height={size} fill={color} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Add"
+        component={Dashboard}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({ color }) => (
+            <ButtonAdd  fill={color} />
           ),
         }}
       />
