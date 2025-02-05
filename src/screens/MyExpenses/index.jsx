@@ -1,4 +1,5 @@
 import React from "react";
+import { ScrollView } from "react-native";
 
 import { Container, Header, Title, LeftIconContainer, RightIconContainer, ImageGraph, Section, Text } from "./styles";
 import { BudgetCard } from "../../components/BudgetCard";
@@ -26,29 +27,32 @@ export const MyExpenses = () => {
 
       <Section>
         <Text>Seus Gastos</Text>
-        
-      </Section>
+        <ScrollView 
+          showsVerticalScrollIndicator={false}>
 
-      <ExpenseCard
-          icon={require('../../../assets/home-icon.png')} // Substitua pelo caminho do ícone
-          title="Moradia"
-          date="2 Dez 2024"
-          price="500 R$"
-        />
-      <ExpenseCard
-          icon={require('../../../assets/food-icon.png')} // Substitua pelo caminho do ícone
-          title="Moradia"
-          date="2 Dez 2024"
-          price="500 R$"
-          iconBackgroundColor={'#BFC0A0'}
-        />
-      <ExpenseCard
-          icon={require('../../../assets/car-icon.png')} // Substitua pelo caminho do ícone
-          title="Carro"
-          date="2 Dez 2024"
-          price="500 R$"
-          iconBackgroundColor={'#ECD4CE'}
-        />
+          <ExpenseCard
+              icon={require('../../../assets/home-icon.png')} // Substitua pelo caminho do ícone
+              title="Moradia"
+              date="2 Dez 2024"
+              price="500 R$"
+            />
+          <ExpenseCard
+              icon={require('../../../assets/food-icon.png')} // Substitua pelo caminho do ícone
+              title="Moradia"
+              date="2 Dez 2024"
+              price="500 R$"
+              iconBackgroundColor={'#BFC0A0'}
+            />
+          <ExpenseCard
+              icon={require('../../../assets/car-icon.png')} // Substitua pelo caminho do ícone
+              title="Carro"
+              date="2 Dez 2024"
+              price="500 R$"
+              iconBackgroundColor={'#ECD4CE'}
+            />
+        </ScrollView>
+      
+      </Section>
     </Container>
   );
 }

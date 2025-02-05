@@ -60,9 +60,8 @@ export const ImageGraph = styled.Image`
 `;
 
 export const Section = styled.View`
-  
+  height: 260px;
   margin-top: 16px;
-  width: 327px;
 `;
 
 export const Text = styled.Text`
@@ -71,6 +70,7 @@ export const Text = styled.Text`
   
   color: #4A5568;
 
+  margin-left: 24px;
   margin-bottom: 10px;
   left: 0;
   top: 0;
