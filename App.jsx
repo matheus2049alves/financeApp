@@ -10,6 +10,7 @@ import {
   Inter_500Medium,
   Inter_700Bold,
 } from '@expo-google-fonts/inter';
+import { MyExpenses } from './src/screens/MyExpenses';
 
 SplashScreen.preventAutoHideAsync(); // Prevent the splash screen from auto-hiding
 
