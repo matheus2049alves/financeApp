@@ -121,6 +121,28 @@ export const PigIcon = styled.View`
   border-radius: 50%;
   width: 42px;
   height: 42px;
+  margin-right: 27px;
   justify-content: center;
   align-items: center;
+`
+export const MoneyContainer = styled.View`
+  width: 327px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`
+
+export const YouMoneyTitle = styled.Text`
+  font-family: "Inter_500Medium";
+  font-weight: bold;
+  font-size: 15px;
+  color: ${({ theme }) => theme.COLORS.TITLE};
+`
+export const YouMoneyTitleWrapper = styled.View`
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 20px;
+  margin-top: 16px;
+  margin-bottom: 15px;
 `
