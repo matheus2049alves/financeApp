@@ -1,13 +1,15 @@
 import React from 'react';
+import { View } from 'react-native';
 import { 
   Container, Title,Header,LeftIconContainer,BalanceCard,BalanceText,
   BalanceAmount,BalanceDetails,BalanceContent, MonthBudgetText,MonthBudget,
    AvaliableMoneyText, TextWrapper, MonthValue, ObjectiveTitle, ObjectiveDescription,
-   PigIcon
+   PigIcon, MoneyContainer, YouMoneyTitle, YouMoneyTitleWrapper
 } from './styles';
 import {HeaderButton} from '../../components/HeaderButton';
 import { BlueCard } from '../../components/BlueCard';
 import SaveMoney from '../../../assets/SaveMoney.svg';
+import {YouMoneyCard} from '../../components/YouMoneyCard';
 
 
 export const Dashboard = () => {
@@ -46,6 +48,13 @@ export const Dashboard = () => {
           </PigIcon>
         </MonthBudget>
       </BlueCard>
+      <YouMoneyTitleWrapper>
+        <YouMoneyTitle>Seu Dinheiro</YouMoneyTitle>
+      </YouMoneyTitleWrapper>
+      <MoneyContainer>
+        <YouMoneyCard color='#A0C7F4' type='Receitas' value='1.500 R$'/>
+        <YouMoneyCard color='#EFC8C8' type='Despesas' value='500 R$'/>
+      </MoneyContainer>
       
     </Container>
   );
