@@ -1,5 +1,4 @@
 import React from 'react';
-import { View } from 'react-native';
 import { 
   Container, Title,Header,LeftIconContainer,BalanceCard,BalanceText,
   BalanceAmount,BalanceDetails,BalanceContent, MonthBudgetText,MonthBudget,
