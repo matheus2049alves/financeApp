@@ -4,6 +4,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import { theme } from './src/global/styles/theme';
 import { Dashboard } from './src/screens/Dashboard';
 import { Login } from './src/screens/Login';
+import { SignUp } from './src/screens/SignUp';
 import { NavigationContainer } from '@react-navigation/native';
 import Routes from './src/routes/routes';
 
@@ -36,7 +37,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Login />
+      <SignUp />
     </ThemeProvider>
   );
 }
