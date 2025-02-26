@@ -8,7 +8,7 @@ export const Transaction = () => {
   return (
     <Container>
       <Header>
-        <Title>Transaction</Title>
+        <Title>Transação</Title>
       </Header>
       <Input
         placeholder="Nome"
@@ -32,7 +32,7 @@ export const Transaction = () => {
         <Picker
           selectedValue={"default"}
           onValueChange={(itemValue, itemIndex) => console.log(itemValue)}
-          style={{ flex: 1, justifyContent: 'center', textAlign: 'left' }}
+          //style={{ flex: 1, justifyContent: 'center', textAlign: 'left' }}
         >
           <Picker.Item label="Categoria" value="default" />
           <Picker.Item label="Comida" value="food" />
