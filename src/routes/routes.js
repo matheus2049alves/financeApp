@@ -2,6 +2,7 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Dashboard } from '../screens/Dashboard';
 import { MyExpenses } from '../screens/MyExpenses';
+import { Transaction } from '../screens/Transaction';
 import {Login} from '../screens/Login';
 import Calendar from '../../assets/Calendar.svg';
 import Wallet from '../../assets/Wallet.svg';
@@ -61,7 +62,7 @@ export default function Routes() {
       />
       <Tab.Screen
         name="Wallet"
-        component={MyExpenses}
+        component={Transaction}
         options={{
           headerShown: false,
           tabBarIcon: ({ color, size }) => (

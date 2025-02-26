@@ -7,6 +7,7 @@ import { Login } from './src/screens/Login';
 import { SignUp } from './src/screens/SignUp';
 import { NavigationContainer } from '@react-navigation/native';
 import Routes from './src/routes/routes';
+import { MyExpenses } from './src/screens/MyExpenses';
 
 import {
   useFonts,
@@ -14,7 +15,6 @@ import {
   Inter_500Medium,
   Inter_700Bold,
 } from '@expo-google-fonts/inter';
-import { MyExpenses } from './src/screens/MyExpenses';
 
 SplashScreen.preventAutoHideAsync(); // Prevent the splash screen from auto-hiding
 
@@ -37,7 +37,9 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <SignUp />
+      <NavigationContainer>
+        <Routes />
+      </NavigationContainer>
     </ThemeProvider>
   );
 }
