@@ -25,6 +25,7 @@ export const Transaction = () => {
       }
     }
     setDate(formattedDate);
+    console.log(formattedDate);
   };
 
   const handleDateBlur = () => {
@@ -36,6 +37,7 @@ export const Transaction = () => {
 
   const handleTransactionTypeChange = (type) => {
     setTransactionType(type);
+    console.log(type);
   };
 
   return (
@@ -50,6 +52,7 @@ export const Transaction = () => {
       <Input
         placeholder="Valor"
         marginTop="12px" // 12px below the Name input
+        keyboardType="numeric"
       />
       <DateInputContainer>
         <DateInputLabel>Data da Transação</DateInputLabel>
@@ -71,7 +74,7 @@ export const Transaction = () => {
         >
           <IncomeIcon width={24} height={24} />
           <ButtonText selected={transactionType === 'income'}>
-            Income
+            Entradas
           </ButtonText>
         </ActionButton>
         <ActionButton
@@ -80,7 +83,7 @@ export const Transaction = () => {
         >
           <OutcomeIcon width={24} height={24} />
           <ButtonText selected={transactionType === 'outcome'}>
-            Outcome
+            Saídas
           </ButtonText>
         </ActionButton>
       </ButtonContainer>
@@ -103,6 +106,21 @@ export const Transaction = () => {
             <Picker.Item label="Investimentos" value="investments" />
             <Picker.Item label="Negócios" value="business" />
             <Picker.Item label="Outros Rendimentos" value="other_income" />
+          </Picker>
+        </SelectBoxView>
+      </SelectBoxContainer>
+      <SelectBoxContainer>
+        <SelectBoxLabel>Carteiras</SelectBoxLabel>
+        <SelectBoxView>
+          <Picker
+            selectedValue={'defult'}
+            onValueChange={(itemValue, itemIndex) => console.log(itemValue)}
+          >
+            <Picker.Item label="Nubank" value="1" />
+            <Picker.Item label="Mercado Pago" value="2" />
+            <Picker.Item label="Inter" value="3" />
+            <Picker.Item label="PicPay" value="4" />
+            <Picker.Item label="Banco do Brasil" value="5" />
           </Picker>
         </SelectBoxView>
       </SelectBoxContainer>

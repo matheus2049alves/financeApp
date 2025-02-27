@@ -56,7 +56,7 @@ export const ButtonText = styled.Text`
 export const SignupText = styled.Text`
   color: #3F57A7;
   font-size: 14px;
-  margin-bottom: 24;
+  margin-bottom: 24px;
 `;
 
 export const SignupLink = styled.Text`
