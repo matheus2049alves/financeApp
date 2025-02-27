@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { Dashboard } from '../screens/Dashboard';
 import { MyExpenses } from '../screens/MyExpenses';
 import { Transaction } from '../screens/Transaction';
+import { Wallets } from '../screens/Wallets';
 import { Login } from '../screens/Login';
 import { CalendarScreen } from '../screens/CalendarScreen';
 import { TouchableOpacity, View } from 'react-native';
@@ -86,7 +87,7 @@ function TabNavigator() {
       />
       <Tab.Screen
         name="Wallet"
-        component={MyExpenses}
+        component={Wallets}
         options={{
           headerShown: false,
           tabBarIcon: ({ color, size }) => (

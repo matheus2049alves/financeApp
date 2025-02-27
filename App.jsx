@@ -8,6 +8,7 @@ import { SignUp } from './src/screens/SignUp';
 import { NavigationContainer } from '@react-navigation/native';
 import Routes from './src/routes/routes';
 import { MyExpenses } from './src/screens/MyExpenses';
+import { WalletCard } from './src/components/WalletCard';
 
 import {
   useFonts,
