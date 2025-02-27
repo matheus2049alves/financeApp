@@ -21,9 +21,17 @@ export const Transaction = () => {
       formattedDate = formattedDate.slice(0, 7) + '-' + formattedDate.slice(7);
     }
     if (formattedDate.length >= 7) {
+      const year = parseInt(formattedDate.slice(0, 4), 10);
       const month = parseInt(formattedDate.slice(5, 7), 10);
+      const day = parseInt(formattedDate.slice(8, 10), 10);
+
       if (month > 12) {
         formattedDate = formattedDate.slice(0, 5) + '12' + formattedDate.slice(7);
+      }
+
+      const daysInMonth = new Date(year, month, 0).getDate();
+      if (day > daysInMonth) {
+        formattedDate = formattedDate.slice(0, 8) + daysInMonth.toString().padStart(2, '0');
       }
     }
     setDate(formattedDate);
