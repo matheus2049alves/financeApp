@@ -74,7 +74,7 @@ export const Transaction = () => {
         >
           <IncomeIcon width={24} height={24} />
           <ButtonText selected={transactionType === 'income'}>
-            Entradas
+            Entrada
           </ButtonText>
         </ActionButton>
         <ActionButton
@@ -83,7 +83,7 @@ export const Transaction = () => {
         >
           <OutcomeIcon width={24} height={24} />
           <ButtonText selected={transactionType === 'outcome'}>
-            Saídas
+            Saída
           </ButtonText>
         </ActionButton>
       </ButtonContainer>
