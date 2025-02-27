@@ -62,7 +62,7 @@ export const ButtonContainer = styled.View`
   flex-direction: row;
   justify-content: space-between;
   width: 90%;
-  margin-top: 27px;
+  margin-top: 20px;
 `;
 
 export const ActionButton = styled.TouchableOpacity`
@@ -115,7 +115,7 @@ export const SubmitButton = styled.TouchableOpacity`
   border-radius: 8px;
   justify-content: center;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 50px;
 `;
 
 export const SubmitButtonText = styled.Text`

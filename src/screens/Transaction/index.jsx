@@ -110,7 +110,7 @@ export const Transaction = () => {
         </SelectBoxView>
       </SelectBoxContainer>
       <SelectBoxContainer>
-        <SelectBoxLabel>Carteiras</SelectBoxLabel>
+        <SelectBoxLabel>Carteira</SelectBoxLabel>
         <SelectBoxView>
           <Picker
             selectedValue={'defult'}
@@ -124,6 +124,10 @@ export const Transaction = () => {
           </Picker>
         </SelectBoxView>
       </SelectBoxContainer>
+      <Input
+        placeholder="Descrição"
+        marginTop="27px"
+      />
       <SubmitButton>
         <SubmitButtonText>Enviar</SubmitButtonText>
       </SubmitButton>
