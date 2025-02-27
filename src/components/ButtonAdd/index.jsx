@@ -1,13 +1,11 @@
 import React from "react";
 import { StyleButtonAdd } from "./styles";
-import {Entypo} from '@expo/vector-icons'; 
+import { Entypo } from '@expo/vector-icons';
 
-
-export const ButtonAdd = ({ color}) => {
+export const ButtonAdd = ({ color, onPress }) => {
   return (
-    <StyleButtonAdd>
-      <Entypo name="plus"color={"white"} size={24}/>
+    <StyleButtonAdd onPress={onPress}>
+      <Entypo name="plus" color={"white"} size={24} />
     </StyleButtonAdd>
-  )
-
-}
+  );
+};

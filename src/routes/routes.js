@@ -1,32 +1,35 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createStackNavigator } from '@react-navigation/stack';
 import { Dashboard } from '../screens/Dashboard';
 import { MyExpenses } from '../screens/MyExpenses';
 import { Transaction } from '../screens/Transaction';
-import {Login} from '../screens/Login';
+import { Login } from '../screens/Login';
+import { TouchableOpacity, View } from 'react-native';
 import Calendar from '../../assets/Calendar.svg';
 import Wallet from '../../assets/Wallet.svg';
 import User from '../../assets/User.svg';
 import Home from '../../assets/Home.svg';
-
-import { ButtonAdd } from '../components/ButtonAdd';
+import { Entypo } from '@expo/vector-icons';
+import { HeaderBackButton } from '@react-navigation/elements';
 
 const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
-export default function Routes() {
+function TabNavigator() {
   return (
     <Tab.Navigator
       screenOptions={{
         tabBarShowLabel: false,
         borderTopColor: 'transparent',
-        tabBarActiveTintColor : '#fff',
+        tabBarActiveTintColor: '#fff',
         tabBarInactiveTintColor: '#fff',
         tabBarStyle: {
           borderTopWidth: 0,
           elevation: 0,
           height: 60,
-          paddingTop: 10, 
-          borderTopLeftRadius: 20 
+          paddingTop: 10,
+          borderTopLeftRadius: 20,
         },
       }}
     >
@@ -52,17 +55,37 @@ export default function Routes() {
       />
       <Tab.Screen
         name="Add"
-        component={Dashboard}
+        component={Dashboard} // Temporariamente definido como Dashboard
         options={{
           headerShown: false,
           tabBarIcon: ({ color }) => (
-            <ButtonAdd  fill={color} />
+            <View
+              style={{
+                backgroundColor: '#4E61B6',
+                width: 60,
+                height: 60,
+                borderRadius: 30,
+                justifyContent: 'center',
+                alignItems: 'center',
+                position: 'absolute',
+                bottom: 3,
+                zIndex: 1,
+              }}
+            >
+              <Entypo name="plus" color="white" size={24} />
+            </View>
           ),
         }}
+        listeners={({ navigation }) => ({
+          tabPress: (e) => {
+            e.preventDefault();
+            navigation.navigate('Transaction');
+          },
+        })}
       />
       <Tab.Screen
         name="Wallet"
-        component={Transaction}
+        component={MyExpenses}
         options={{
           headerShown: false,
           tabBarIcon: ({ color, size }) => (
@@ -81,5 +104,29 @@ export default function Routes() {
         }}
       />
     </Tab.Navigator>
+  );
+}
+
+export default function Routes() {
+  return (
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="Main" component={TabNavigator} />
+      <Stack.Screen
+        name="Transaction"
+        component={Transaction}
+        options={({ navigation }) => ({
+          headerShown: true,
+          headerTransparent: true,
+          headerTitle: '',
+          headerLeft: (props) => (
+            <HeaderBackButton
+              {...props}
+              onPress={() => navigation.goBack()}
+              tintColor="#fff" // Define a cor da flecha como branca
+            />
+          ),
+        })}
+      />
+    </Stack.Navigator>
   );
 }
