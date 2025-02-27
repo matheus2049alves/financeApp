@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, Alert } from 'react-native';
 import { Calendar } from 'react-native-calendars';
 import { Container, Header, Title, SelectedDateText } from './styles';
+import { heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 export const CalendarScreen = ({ navigation }) => {
   const [selectedDate, setSelectedDate] = useState('');
@@ -16,7 +17,7 @@ export const CalendarScreen = ({ navigation }) => {
       <Header>
         <Title>Calendário</Title>
       </Header>
-      <View style={{ marginTop: 180 }}> {/* Ajuste para garantir que a parte superior seja visível */}
+      <View style={{ marginTop: hp('20%') }}>
         <Calendar
           onDayPress={onDayPress}
           markedDates={{

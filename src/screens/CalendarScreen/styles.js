@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 export const Container = styled.View`
   flex: 1;
@@ -6,7 +7,7 @@ export const Container = styled.View`
 `;
 
 export const Header = styled.View`
-  height: 153px;
+  height: ${hp('20%')}px;
   width: 100%;
   background-color: ${({ theme }) => theme.COLORS.SECONDARY};
   justify-content: center;
@@ -16,16 +17,16 @@ export const Header = styled.View`
 `;
 
 export const Title = styled.Text`
-  font-size: 24px;
+  font-size: ${wp('6%')}px;
   font-weight: bold;
   color: ${({ theme }) => theme.COLORS.PRIMARY};
   text-align: center;
   position: absolute;
-  bottom: 27px;
+  bottom: ${hp('3%')}px;
 `;
 
 export const SelectedDateText = styled.Text`
-  margin-top: 20px;
+  margin-top: ${hp('2%')}px;
   text-align: center;
-  font-size: 16px;
+  font-size: ${wp('4%')}px;
 `;
