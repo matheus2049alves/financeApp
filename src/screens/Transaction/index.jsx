@@ -5,6 +5,7 @@ import { Container, Header, Title, Input, ButtonContainer, ActionButton, ButtonT
 import IncomeIcon from '../../../assets/Incom.svg';
 import OutcomeIcon from '../../../assets/Outcome.svg';
 import { Picker } from '@react-native-picker/picker';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 export const Transaction = () => {
   const [date, setDate] = useState('');
@@ -46,12 +47,8 @@ export const Transaction = () => {
         <Title>Transação</Title>
       </Header>
       <Input
-        placeholder="Destino"
-        marginTop="180px" // 153px (Header height) + 27px
-      />
-      <Input
         placeholder="Valor"
-        marginTop="12px" // 12px below the Name input
+        marginTop={`${hp('22%')}px`}
         keyboardType="numeric"
       />
       <DateInputContainer>
@@ -126,7 +123,7 @@ export const Transaction = () => {
       </SelectBoxContainer>
       <Input
         placeholder="Descrição"
-        marginTop="27px"
+        marginTop={`${hp('3%')}px`}
       />
       <SubmitButton>
         <SubmitButtonText>Enviar</SubmitButtonText>
