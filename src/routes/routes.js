@@ -6,6 +6,7 @@ import { MyExpenses } from '../screens/MyExpenses';
 import { Transaction } from '../screens/Transaction';
 import { Wallets } from '../screens/Wallets';
 import { Login } from '../screens/Login';
+import {SignUp} from '../screens/SignUp';
 import { CalendarScreen } from '../screens/CalendarScreen';
 import { TouchableOpacity, View } from 'react-native';
 import Calendar from '../../assets/Calendar.svg';
@@ -112,6 +113,8 @@ function TabNavigator() {
 export default function Routes() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name = "SignUp" component = {SignUp} />
+      <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Main" component={TabNavigator} />
       <Stack.Screen
         name="Transaction"
