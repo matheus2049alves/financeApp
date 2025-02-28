@@ -42,7 +42,7 @@ export const Input = styled(TextInput)`
 
 export const DateInputContainer = styled.View`
   width: 90%;
-  margin-top: ${hp('1.5%')}px; /* 12px abaixo do input de 'Preço' */
+  margin-top: ${hp('0.5%')}px; /* Adjusted margin-top for consistency with other elements */
 `;
 
 export const DateInputLabel = styled.Text`
@@ -65,7 +65,6 @@ export const ButtonContainer = styled.View`
   flex-direction: row;
   justify-content: space-between;
   width: 90%;
-  margin-top: ${hp('2.5%')}px;
 `;
 
 export const ActionButton = styled.TouchableOpacity`
@@ -93,7 +92,7 @@ export const SelectBoxContainer = styled.View`
   justify-content: center;
   border-radius: 8px;
   padding: 0 ${wp('5%')}px;
-  margin-top: ${hp('3.5%')}px;
+  margin-top: ${hp('1.5%')}px; /* Adjusted margin-top for consistency with other elements */
 `;
 
 export const SelectBoxView = styled.View`

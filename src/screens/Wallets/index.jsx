@@ -47,7 +47,7 @@ export const Wallets = () => {
       const walletData = {
         name: newWalletName,
         balance: parseFloat(newWalletBalance),
-        userId: user.id // Assumindo que você tem o ID do usuário no contexto de autenticação
+        userId: user.id 
       };
       
       if (editingWallet) {
