@@ -8,13 +8,14 @@ import { Wallets } from '../screens/Wallets';
 import { Login } from '../screens/Login';
 import {SignUp} from '../screens/SignUp';
 import { CalendarScreen } from '../screens/CalendarScreen';
-import { TouchableOpacity, View } from 'react-native';
+import { ActivityIndicator, View } from 'react-native';
 import Calendar from '../../assets/Calendar.svg';
 import Wallet from '../../assets/Wallet.svg';
 import User from '../../assets/User.svg';
 import Home from '../../assets/Home.svg';
 import { Entypo } from '@expo/vector-icons';
 import { HeaderBackButton } from '@react-navigation/elements';
+import { useAuth } from '../hooks/auth';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -110,11 +111,9 @@ function TabNavigator() {
   );
 }
 
-export default function Routes() {
+function AuthenticatedRoutes() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name = "SignUp" component = {SignUp} />
-      <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Main" component={TabNavigator} />
       <Stack.Screen
         name="Transaction"
@@ -127,27 +126,39 @@ export default function Routes() {
             <HeaderBackButton
               {...props}
               onPress={() => navigation.goBack()}
-              tintColor="#fff" // Define a cor da flecha como branca
+              tintColor="#fff"
             />
           ),
         })}
       />
-      <Stack.Screen
-        name="CalendarScreen"
-        component={CalendarScreen}
-        options={({ navigation }) => ({
-          headerShown: true,
-          headerTransparent: true,
-          headerTitle: '',
-          headerLeft: (props) => (
-            <HeaderBackButton
-              {...props}
-              onPress={() => navigation.goBack()}
-              tintColor="#fff" // Define a cor da flecha como branca
-            />
-          ),
-        })}
-      />
+      <Stack.Screen name="MyExpenses" component={MyExpenses} />
+      <Stack.Screen name="CalendarScreen" component={CalendarScreen} />
     </Stack.Navigator>
   );
+}
+
+
+function UnauthenticatedRoutes() {
+  return (
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="SignUp" component={SignUp} />
+    </Stack.Navigator>
+  );
+}
+
+
+export default function Routes() {
+  const { user, loading } = useAuth();
+
+  if (loading) {
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <ActivityIndicator size="large" color="#4E61B6" />
+      </View>
+    );
+  }
+
+  // Renderiza as rotas com base no estado de autenticação
+  return user ? <AuthenticatedRoutes /> : <UnauthenticatedRoutes />;
 }

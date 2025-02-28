@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { 
   Container, Title,Header,LeftIconContainer,BalanceCard,BalanceText,
   BalanceAmount,BalanceDetails,BalanceContent, MonthBudgetText,MonthBudget,
@@ -12,6 +13,11 @@ import {YouMoneyCard} from '../../components/YouMoneyCard';
 
 
 export const Dashboard = () => {
+  const navigation = useNavigation();
+
+  function handleNavigateToMyExpenses() {
+    navigation.navigate('MyExpenses');
+  }
   return (
     <Container>
       <Header>
@@ -24,7 +30,7 @@ export const Dashboard = () => {
         <BalanceContent>
           <BalanceText>Saldo Disponível</BalanceText>
           <BalanceAmount>1.000 R$</BalanceAmount>
-          <BalanceDetails>Ver Extrato</BalanceDetails>
+          <BalanceDetails onPress={handleNavigateToMyExpenses}>Ver Extrato</BalanceDetails>
         </BalanceContent>
       </BalanceCard>
       <BlueCard width= {327} height={82} color='#3F57A7'>
