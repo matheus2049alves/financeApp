@@ -70,3 +70,10 @@ export const ModalButtonText = styled.Text`
   font-size: 16px;
   color: #007bff;
 `;
+
+export const LoadingContainer = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+`;
